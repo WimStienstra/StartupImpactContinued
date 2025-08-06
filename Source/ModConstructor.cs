@@ -41,7 +41,7 @@ namespace StartupImpact
                     }
                     catch (Exception ex)
                     {
-                        Log.Error(string.Concat(new object[] { "Error while instantiating a mod of type ", type, ": ", ex }), false);
+                        Log.Error(string.Concat(new object[] { "Error while instantiating a mod of type ", type, ": ", ex }));
                     }
                 }
             }
