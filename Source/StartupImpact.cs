@@ -1,9 +1,7 @@
 ﻿using HarmonyLib;
 using StartupImpact.Patch;
 using System;
-using System.CodeDom;
 using System.Reflection;
-using System.Threading;
 using UnityEngine;
 using Verse;
 
@@ -11,7 +9,6 @@ namespace StartupImpact
 {
     public class StartupImpact :Mod
     {
-        public static int mainThreadId;
         public static ModInfoList modlist = new ModInfoList();
         public static bool loadingTimeMeasured = false;
         public static int loadingTime = 0;
@@ -19,10 +16,8 @@ namespace StartupImpact
         public static Profiler baseGameProfiler;
         public static StartupImpactSettings settings;
 
-        CodeCompileUnit compileUnit = new CodeCompileUnit();
-
         public StartupImpact(ModContentPack pack) :base(pack) {
-            mainThreadId = Thread.CurrentThread.ManagedThreadId;
+            // Removed mainThreadId and unnecessary threading overhead since RimWorld is single-threaded
 
             settings = GetSettings<StartupImpactSettings>();
             baseGameProfiler = new Profiler("base game");

@@ -18,7 +18,7 @@ namespace StartupImpact
         public override int stop()
         {
             stopwatch.Stop();
-            int ms = stopwatch.Elapsed.Milliseconds;
+            int ms = (int)stopwatch.Elapsed.TotalMilliseconds;
             stopwatch.Reset();
             return ms;
         }

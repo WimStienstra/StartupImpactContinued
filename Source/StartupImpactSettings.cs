@@ -16,14 +16,14 @@ namespace StartupImpact
             return Type.GetType("Mono.Runtime") != null;
         }
 
-        public ProfilerType profilerType = ProfilerType.Ticks;
+        public ProfilerType profilerType = ProfilerType.Stopwatch; // Changed default to Stopwatch since it's now fixed and more accurate
         public bool resolveReferences = !IsMono();
 
         public override void ExposeData()
         {
             base.ExposeData();
 
-            Scribe_Values.Look(ref profilerType, "profilerType", ProfilerType.Ticks);
+            Scribe_Values.Look(ref profilerType, "profilerType", ProfilerType.Stopwatch); // Updated default
             Scribe_Values.Look(ref resolveReferences, "resolveReferences", !IsMono());
         }
     }

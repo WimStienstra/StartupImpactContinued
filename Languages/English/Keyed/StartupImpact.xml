@@ -17,6 +17,18 @@
   <StartupImpact-total-basegame>Not directly related to mods</StartupImpact-total-basegame>
   <StartupImpact-total-others>Not measured</StartupImpact-total-others>
   
+  <StartupImpactProfilerTicksLabel>Use Environment.TickCount profiler</StartupImpactProfilerTicksLabel>
+  <StartupImpactProfilerTicksTooltip>Lower precision (15.6ms resolution), high reliability. Simple and consistent across systems.</StartupImpactProfilerTicksTooltip>
+
+  <StartupImpactProfilerStopwatchLabel>Use Stopwatch profiler</StartupImpactProfilerStopwatchLabel>
+  <StartupImpactProfilerStopwatchTooltip>High precision timing using .NET Stopwatch class. Now correctly measures total elapsed time.</StartupImpactProfilerStopwatchTooltip>
+
+  <StartupImpactProfilerDateLabel>Use DateTime.UtcNow profiler</StartupImpactProfilerDateLabel>
+  <StartupImpactProfilerDateTooltip>High precision timing using DateTime.UtcNow. Now correctly measures total elapsed time.</StartupImpactProfilerDateTooltip>
+
+  <StartupImpactResolveReferencesLabel>Attribute "Resolve References" times to mods.</StartupImpactResolveReferencesLabel>
+  <StartupImpactResolveReferencesTooltip>May cause issues on some systems.</StartupImpactResolveReferencesTooltip>
+  
   <StartupImpactStartupTime>Startup time: {0}</StartupImpactStartupTime>
   <StartupImpactStartupMods>Mods startup impact: {0}</StartupImpactStartupMods>
   
@@ -25,18 +37,6 @@
   <StartupImpactSeconds>{0}s</StartupImpactSeconds>
   <StartupImpactMilliseconds>{0}ms</StartupImpactMilliseconds>
   
-  <StartupImpactProfilerTicksLabel>Use Environment.TickCount profiler</StartupImpactProfilerTicksLabel>
-  <StartupImpactProfilerTicksTooltip>Low precision, high reliability. Using other options is not recommended.</StartupImpactProfilerTicksTooltip>
-
-  <StartupImpactProfilerStopwatchLabel>Use Stopwatch profiler</StartupImpactProfilerStopwatchLabel>
-  <StartupImpactProfilerStopwatchTooltip>High precision, doesn't work properly on many systems (reports timings that are multiple times smaller than the amount of time actually passed).</StartupImpactProfilerStopwatchTooltip>
-
-  <StartupImpactProfilerDateLabel>Use DateTime.Now profiler</StartupImpactProfilerDateLabel>
-  <StartupImpactProfilerDateTooltip>High precision, doesn't work properly on many systems.</StartupImpactProfilerDateTooltip>
-
-  <StartupImpactResolveReferencesLabel>Attribute "Resolve References" times to mods.</StartupImpactResolveReferencesLabel>
-  <StartupImpactResolveReferencesTooltip>May cause issues on some systems.</StartupImpactResolveReferencesTooltip>
-
   <StartupImpactFailedMeasuringLoadingTime> (Warning: failed to measure loading time)</StartupImpactFailedMeasuringLoadingTime>
 
   <StartupImpactVerinfo>v{0}; profiler: {1}</StartupImpactVerinfo>

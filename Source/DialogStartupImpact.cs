@@ -12,7 +12,10 @@ namespace StartupImpact
     [StaticConstructorOnStartup]
     class DialogStartupImpact : Window
     {
-        public override Vector2 InitialSize => new Vector2(800f, Math.Min(800,UI.screenHeight*0.75f));
+        public override Vector2 InitialSize
+        {
+            get { return new Vector2(800f, System.Math.Min(800, UI.screenHeight * 0.75f)); }
+        }
 
         public static readonly Dictionary<string, Color> categoryColors = new Dictionary<string, Color>
         {

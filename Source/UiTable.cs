@@ -32,8 +32,16 @@ namespace StartupImpact
         public void Start(float x, float y, float w, float h) {
  
             if (uiRect.x != x || uiRect.y != y || uiRect.width != w || uiRect.height != h) {
-                uiRect = new Rect(x, y, w, h);
-                viewRect = new Rect(0, 0, w - 16f, rowCount * rowHeight);
+                // Avoid creating new Rect objects unnecessarily - just update existing ones
+                uiRect.x = x;
+                uiRect.y = y;
+                uiRect.width = w;
+                uiRect.height = h;
+                
+                viewRect.x = 0;
+                viewRect.y = 0;
+                viewRect.width = w - 16f;
+                viewRect.height = rowCount * rowHeight;
 
                 float totalNeededWidth = 0;
                 float totalAvailableWidth = viewRect.width;

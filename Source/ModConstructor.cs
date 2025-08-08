@@ -35,13 +35,13 @@ namespace StartupImpact
 
                             var info = StartupImpact.modlist.Get(modContentPack);
                             info.Start("constructor");
-                            runningModClasses[type] = (Mod)Activator.CreateInstance(type, new object[] { modContentPack });
+                            runningModClasses[type] = (Mod)Activator.CreateInstance(type, modContentPack);
                             info.Stop("constructor");
                         }
                     }
                     catch (Exception ex)
                     {
-                        Log.Error(string.Concat(new object[] { "Error while instantiating a mod of type ", type, ": ", ex }));
+                        Log.Error("Error while instantiating a mod of type " + type + ": " + ex);
                     }
                 }
             }

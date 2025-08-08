@@ -16,13 +16,13 @@ namespace StartupImpact
 
         public override int stop()
         {
-            return (DateTime.UtcNow - startTime).Milliseconds;
+            return (int)(DateTime.UtcNow - startTime).TotalMilliseconds;
         }
 
         public override int stopAndStart()
         {
             DateTime now = DateTime.UtcNow;
-            int passed = (now - startTime).Milliseconds;
+            int passed = (int)(now - startTime).TotalMilliseconds;
             startTime = now;
             return passed;
         }
